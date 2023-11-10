@@ -137,3 +137,4 @@ alias ssh_potato="ssh -i ~/.ssh/id_vultr trapani@potato"
 export OPENAI_API_KEY=xxx
 
 eval "$(github-copilot-cli alias -- "$0")"
+
