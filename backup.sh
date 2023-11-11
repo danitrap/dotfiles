@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ~/dotfiles || exit
+
 # check to see is git command line installed in this machine
 IS_GIT_AVAILABLE="$(git --version)"
 if [[ $IS_GIT_AVAILABLE == *"version"* ]]; then
