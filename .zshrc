@@ -138,3 +138,4 @@ export OPENAI_API_KEY=xxx
 
 eval "$(github-copilot-cli alias -- "$0")"
 
+export PATH="$HOME/.local/scripts:$PATH"
