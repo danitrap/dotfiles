@@ -1,19 +1,8 @@
 return {
   "rcarriga/nvim-notify",
-  config = function(_, opts)
-    local job = require("plenary.job")
-    job
-      :new({
-        command = "curl",
-        args = { "https://vtip.43z.one" },
-        on_exit = function(j, exit_code)
-          local res = table.concat(j:result(), "\n")
-          if exit_code ~= 0 then
-            res = "Error fetching tip: " .. res
-          end
-          require("notify")(res)
-        end,
-      })
-      :start()
+  config = function()
+    require("notify").setup({
+      background_colour = "#000000",
+    })
   end,
 }
