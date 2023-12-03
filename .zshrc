@@ -80,21 +80,41 @@ plugins=(git zsh-completions zsh-autosuggestions fzf-zsh-plugin)
 fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 autoload -U compinit && compinit
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 source $ZSH/oh-my-zsh.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/Users/danieletrapani/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+eval "$(github-copilot-cli alias -- "$0")"
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export FZF_PREVIEW_ADVANCED=true
+export OPENAI_API_KEY=xxx
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -109,39 +129,18 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias l='exa -l --icons --git -a'
 alias lt='exa --tree --level=2 --long --icons --git'
+alias sail='./vendor/bin/sail'
 alias vim='nvim'
 alias zshconfig="vim ~/.zshrc"
 alias ssh_potato="ssh -i ~/.ssh/id_vultr trapani@potato"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+# PATH modifications
 export PATH="usr/local/opt/php@7.4/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-alias sail='./vendor/bin/sail'
-
-
 export PATH="$HOME/.poetry/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/Users/danieletrapani/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-
-export OPENAI_API_KEY=xxx
-
-eval "$(github-copilot-cli alias -- "$0")"
-
 export PATH="$HOME/.local/scripts:$PATH"
-export EDITOR="nvim"
+#
+# functions
 
 function frg {
   result=$(rg --ignore-case --color=always --line-number --no-heading "$@" |
@@ -156,9 +155,5 @@ function frg {
         $EDITOR +"${linenumber}" "$file"
       fi
     }
-
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-export FZF_PREVIEW_ADVANCED=true
 
 cx() { cd "$@" && l; }
