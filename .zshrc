@@ -80,9 +80,9 @@ plugins=(git zsh-completions zsh-autosuggestions fzf-zsh-plugin)
 fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 autoload -U compinit && compinit
 
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
 source $ZSH/oh-my-zsh.sh
+
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -139,7 +139,7 @@ export PATH="usr/local/opt/php@7.4/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.local/scripts:$PATH"
-#
+
 # functions
 
 function frg {
