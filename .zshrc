@@ -75,8 +75,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-completions zsh-autosuggestions)
+plugins=(git zsh-completions zsh-autosuggestions fzf-zsh-plugin)
 
+fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
@@ -106,6 +107,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias l='exa -l --icons --git -a'
+alias lt='exa --tree --level=2 --long --icons --git'
+alias vim='nvim'
+alias zshconfig="vim ~/.zshrc"
+alias ssh_potato="ssh -i ~/.ssh/id_vultr trapani@potato"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -129,10 +135,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-alias vim='nvim'
-
-alias zshconfig="vim ~/.zshrc"
-alias ssh_potato="ssh -i ~/.ssh/id_vultr trapani@potato"
 
 export OPENAI_API_KEY=xxx
 
@@ -154,3 +156,9 @@ function frg {
         $EDITOR +"${linenumber}" "$file"
       fi
     }
+
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+export FZF_PREVIEW_ADVANCED=true
+
+cx() { cd "$@" && l; }
