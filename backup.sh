@@ -18,8 +18,14 @@ rm -rf ./nvim/.git
 # copy tmux config
 cp $HOME/.tmux.conf .
 
-# copy alacrity config
-cp -r $HOME/.config/alacritty/ ./alacritty
+# copy kitty config
+cp -r $HOME/.config/kitty/ ./kitty
+
+# copy yabai config
+cp -r $HOME/.config/yabai/ ./yabai
+
+# copy skhd config
+cp -r $HOME/.config/skhd/ ./skhd
 
 # copy zshrc config
 cp $HOME/.zshrc .
