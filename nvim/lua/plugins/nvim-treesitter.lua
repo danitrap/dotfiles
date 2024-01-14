@@ -3,6 +3,9 @@ return {
   opts = {
     ensure_installed = {
       "bash",
+      "eex",
+      "elixir",
+      "heex",
       "html",
       "javascript",
       "json",
@@ -12,13 +15,12 @@ return {
       "python",
       "query",
       "regex",
+      "rust",
       "tsx",
       "typescript",
       "vim",
       "yaml",
-      "elixir",
-      "heex",
-      "eex",
     },
+    auto_install = true,
   },
 }

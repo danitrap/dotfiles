@@ -7,3 +7,6 @@ vim.filetype.add({
     templ = "templ",
   },
 })
+
+-- add line at 80 chars
+vim.cmd("set colorcolumn=80")
