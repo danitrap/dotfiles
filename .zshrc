@@ -158,5 +158,10 @@ function frg {
 
 cx() { cd "$@" && l; }
 
+function n {
+  cd "$(fd . "${HOME}" --type d --color never | fzf --select-1 --query "${*}")"
+  ls
+}
+
 eval "$(starship init zsh)"
 
