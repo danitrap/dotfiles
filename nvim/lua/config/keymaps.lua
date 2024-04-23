@@ -23,3 +23,6 @@ vim.api.nvim_set_keymap("n", "N", "Nzzzv", { silent = true })
 -- Q for playing back macro in register q, both normal and visual mode
 vim.api.nvim_set_keymap("n", "Q", "@qj", { silent = true })
 vim.api.nvim_set_keymap("x", "Q", ":norm @q<CR>", { noremap = true, silent = true })
+
+-- oil.nvim
+vim.api.nvim_set_keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
