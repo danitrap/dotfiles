@@ -75,7 +75,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-completions zsh-autosuggestions fzf-zsh-plugin)
+plugins=(git zsh-completions zsh-autosuggestions)
 
 fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 autoload -U compinit && compinit
@@ -98,13 +98,10 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-eval "$(github-copilot-cli alias -- "$0")"
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export FZF_PREVIEW_ADVANCED=true
-export OPENAI_API_KEY=xxx
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -163,5 +160,6 @@ function n {
   ls
 }
 
-eval "$(starship init zsh)"
+source <(fzf --zsh)
 
+eval "$(starship init zsh)"
