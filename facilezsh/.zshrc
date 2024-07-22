@@ -128,7 +128,12 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_NO_STORE
 ### history end ###
 
-
+### secrets ###
+if [ -f $XDG_CONFIG_HOME/.secrets ]; then
+  source $XDG_CONFIG_HOME/.secrets
+fi
+### secrets end ###
+#
 ### nvm ###
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -158,11 +163,6 @@ esac
 export XDG_CONFIG_HOME="$HOME/.config"
 ### XDG base directory specification end ###
 
-### secrets ###
-if [ -f $XDG_CONFIG_HOME/.secrets ]; then
-  source $XDG_CONFIG_HOME/.secrets
-fi
-### secrets end ###
 
 ### path manipulation ###
 PATH="$PATH":"$HOME/.local/scripts/"
@@ -175,8 +175,8 @@ alias k9s-dev="k9s --context dev -n insurance-non-motor"
 alias k9s-prod="k9s --context public -n insurance-non-motor"
 alias chrome-sans-security='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 alias vim='nvim'
-alias l='exa -l --icons --git -a'
-alias lt='exa --tree --level=2 --long --icons --git'
+alias l='eza -l --icons --git -a'
+alias lt='eza --tree --level=2 --long --icons --git'
 ### aliases end ###
 
 ### functions ###
