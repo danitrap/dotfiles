@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+git fetch
+previous_branch=$(git branch --show-current)
+git switch "$1"
+if [ "$(git branch --list master)" ]; then
+  git diff master
+elif [ "$(git branch --list main)" ]; then
+  git diff main
+fi
+git switch "$previous_branch"
