@@ -124,8 +124,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias l='exa -l --icons --git -a'
-alias lt='exa --tree --level=2 --long --icons --git'
+alias l='eza -l --icons --git -a'
+alias lt='eza --tree --level=2 --long --icons --git'
 alias sail='./vendor/bin/sail'
 alias vim='nvim'
 alias zshconfig="vim ~/.zshrc"
@@ -160,6 +160,16 @@ function n {
   ls
 }
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 source <(fzf --zsh)
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
