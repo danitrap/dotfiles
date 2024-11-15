@@ -129,7 +129,7 @@ alias lt='eza --tree --level=2 --long --icons --git'
 alias sail='./vendor/bin/sail'
 alias vim='nvim'
 alias zshconfig="vim ~/.zshrc"
-alias ssh_potato="ssh -i ~/.ssh/id_vultr trapani@potato"
+alias ssh_tomacco="ssh -i ~/.ssh/id_ed25519_tomacco danirob@5.75.166.13"
 
 # PATH modifications
 export PATH="usr/local/opt/php@7.4/bin:$PATH"
