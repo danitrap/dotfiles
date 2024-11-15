@@ -173,3 +173,5 @@ source <(fzf --zsh)
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+export PATH=$PATH:$(go env GOPATH)/bin
