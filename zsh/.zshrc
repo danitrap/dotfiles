@@ -177,3 +177,9 @@ eval "$(starship init zsh)"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 PATH=~/.console-ninja/.bin:$PATH
+# bun completions
+[ -s "/Users/danieletrapani/.bun/_bun" ] && source "/Users/danieletrapani/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
