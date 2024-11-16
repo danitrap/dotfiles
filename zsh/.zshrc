@@ -175,3 +175,5 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 export PATH=$PATH:$(go env GOPATH)/bin
+
+PATH=~/.console-ninja/.bin:$PATH
