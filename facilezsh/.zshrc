@@ -205,6 +205,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ### Final evals ###
 source <(fzf --zsh)
 source <(kubectl completion zsh)
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 ### Final evals end ###
 
