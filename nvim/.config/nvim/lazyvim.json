@@ -2,7 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.ai.copilot-chat",
-    "lazyvim.plugins.extras.editor.harpoon2"
+    "lazyvim.plugins.extras.editor.harpoon2",
+    "lazyvim.plugins.extras.test.core"
   ],
   "news": {
     "NEWS.md": "7429"
