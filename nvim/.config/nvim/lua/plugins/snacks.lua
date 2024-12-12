@@ -3,6 +3,10 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
+    indent = { enabled = true },
+    input = { enabled = true },
+    scroll = { enabled = true },
+    scope = { enabled = false },
     dashboard = {
       enabled = true,
       preset = {
@@ -22,10 +26,10 @@ return {
             action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
           },
           { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-          { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+          { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           {
-            icon = "󰒲 ",
-            key = "X",
+            icon = " ",
+            key = "x",
             desc = "LazyExtras",
             action = ":LazyExtras",
             enabled = package.loaded.lazy ~= nil,
