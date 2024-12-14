@@ -1,0 +1,32 @@
+[default_session]
+startup_command = "nvim -c 'FzfLua files'"
+
+[[session]]
+name = "Home 🏠"
+path = "~/"
+disable_startup_command = true
+
+[[session]]
+name = "Downloads 📥"
+path = "~/Downloads"
+startup_command = "yazi"
+
+[[session]]
+name = "Code 💻"
+path = "~/Code"
+startup_command = "l"
+
+[[session]]
+name = "tmux config"
+path = "~/"
+startup_command = "nvim .tmux.conf"
+
+[[session]]
+name = "nvim config"
+path = "~/.config/nvim/lua/"
+startup_command = "nvim ."
+
+[[session]]
+name = "zsh config"
+path = "~/"
+startup_command = "nvim .zshrc"
