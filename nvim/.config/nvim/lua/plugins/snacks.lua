@@ -2,11 +2,6 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
-    bigfile = { enabled = true },
-    indent = { enabled = true },
-    input = { enabled = true },
-    scroll = { enabled = true },
-    scope = { enabled = false },
     dashboard = {
       enabled = true,
       preset = {
@@ -55,18 +50,6 @@ return {
         { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
         { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
         { section = "startup" },
-      },
-    },
-    notifier = {
-      enabled = true,
-      timeout = 3000,
-    },
-    quickfile = { enabled = true },
-    statuscolumn = { enabled = true },
-    words = { enabled = true },
-    styles = {
-      notification = {
-        wo = { wrap = true }, -- Wrap notifications
       },
     },
   },
