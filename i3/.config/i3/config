@@ -49,6 +49,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Auto tiling script
 exec_always --no-startup-id autotiling
 
+# Start kitty terminal at workspace 2 and brave browser at workspace 1
+exec --no-startup-id i3-msg 'workspace 2; exec kitty; workspace 1; exec brave'
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -64,7 +67,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+q exec kitty
 
 # kill focused window
 bindsym $mod+c kill
@@ -102,13 +105,13 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-#bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Return fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -116,7 +119,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-#bindsym $mod+Shift+space floating toggle
+bindsym $mod+f floating toggle
 
 # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
@@ -125,7 +128,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -204,6 +207,24 @@ bindsym $mod+r mode "resize"
 # bar {
 #         status_command i3status
 # }
+
+#### STYLES ####
+
+# removes window name
+default_border pixel 2
+# hides bottom margin
+hide_edge_borders both
+
+# 5px between windows
+gaps inner 5
+# 0 between the edge of the screen and the windows
+gaps outer -5
+# hide gaps when there is only one window
+smart_gaps on
+
+for_window [class="TelegramDesktop"] floating enable
+for_window [class="TelegramDesktop"] resize set 500 600
+for_window [class="TelegramDesktop"] position right
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
