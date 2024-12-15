@@ -50,7 +50,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
 
 # Start kitty terminal at workspace 2 and brave browser at workspace 1
-exec --no-startup-id i3-msg 'workspace 2; exec kitty; workspace 1; exec brave'
+exec --no-startup-id i3-msg 'workspace 2; exec kitty; workspace 1; exec brave-browser'
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
