@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get weather information from wttr.in.
-weather=$(curl -sS "wttr.in/?format=%C+%t+%h")
+weather=$(curl -sS "https://wttr.in/Palermo,%20Italy?format=%C+%t+%h")
 
 # Extract the weather condition, temperature, and humidity using regular expressions.
 condition=$(echo "$weather" | grep -oE '^[[:alpha:] ]+[[:alpha:]]')
@@ -15,6 +15,7 @@ case $condition in
 "Cloudy"*) icon=" " ;;        #\uf041
 "Mist"*) icon=" " ;;          #\uf74e
 "Fog"*) icon=" " ;;           #uf74e
+"Rain"*) icon=" " ;;          #\ue009
 "Light rain"*) icon=" " ;;    #\ue009
 "Moderate rain"*) icon=" " ;; #\ue009
 "Heavy rain"*) icon=" " ;;    #\uf02d
