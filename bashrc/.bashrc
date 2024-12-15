@@ -122,7 +122,7 @@ alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 
 # specialty views
 alias lS='eza -1'               # one column, just names
-alias lt='eza --tree --level=2' # tree
+alias lt='eza --tree --level=3' # tree
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
