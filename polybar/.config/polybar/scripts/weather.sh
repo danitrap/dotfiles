@@ -1,7 +1,20 @@
 #!/bin/bash
 
+# export MY_LOCATION="Palermo, Italy" in your .bashrc or .bash_aliases
+location="${MY_LOCATION:-Palermo, Italy}"
+
+location_urlencoded="${location/ /\%20}"
+wttr_url="https://wttr.in/$location_urlencoded"
+
 # Get weather information from wttr.in.
-weather=$(curl -sS "https://wttr.in/Palermo,%20Italy?format=%C+%t+%h")
+weather=$(curl -sS "${wttr_url}?format=%C+%t+%h" 2>/dev/null)
+
+# check if the curl has failed and print "wttr.in is down" if it has
+
+if [ -z "$weather" ]; then
+  echo "wttr.in down"
+  exit 1
+fi
 
 # Extract the weather condition, temperature, and humidity using regular expressions.
 condition=$(echo "$weather" | grep -oE '^[[:alpha:] ]+[[:alpha:]]')

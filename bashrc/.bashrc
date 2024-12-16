@@ -124,6 +124,11 @@ alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 alias lS='eza -1'               # one column, just names
 alias lt='eza --tree --level=3' # tree
 
+# update kitty
+alias updatekitty='curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin'
+
+export MY_LOCATION='Palermo, Italy'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
