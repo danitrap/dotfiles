@@ -15,9 +15,7 @@ case $condition in
 "Cloudy"*) icon=" " ;;        #\uf041
 "Mist"*) icon=" " ;;          #\uf74e
 "Fog"*) icon=" " ;;           #uf74e
-"Rain"*) icon=" " ;;          #\ue009
-"Light rain"*) icon=" " ;;    #\ue009
-"Moderate rain"*) icon=" " ;; #\ue009
+*[Rr]ain*) icon=" " ;;        #\ue009
 "Heavy rain"*) icon=" " ;;    #\uf02d
 "Overcast"*) icon=" " ;;      #\uf041
 *) icon=" " ;;                #\u2757
