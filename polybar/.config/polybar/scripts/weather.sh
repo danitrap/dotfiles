@@ -7,7 +7,7 @@ location_urlencoded="${location/ /\%20}"
 wttr_url="https://wttr.in/$location_urlencoded"
 
 # Get weather information from wttr.in.
-weather=$(curl -sS "${wttr_url}?format=%C+%t+%h" 2>/dev/null)
+weather=$(curl -sS "${wttr_url}?format=%C+%t+%h&lang=en" 2>/dev/null)
 
 # check if the curl has failed and print "wttr.in is down" if it has
 
@@ -23,6 +23,7 @@ humidity=$(echo "$weather" | grep -oE '[0-9]+%')
 
 # Select the appropriate icon according to the weather condition.
 case $condition in
+"Sunny"*) icon=" " ;;         #\uf185
 "Clear"*) icon=" " ;;         #\uf305
 "Partly cloudy"*) icon=" " ;; #\uf002
 "Cloudy"*) icon=" " ;;        #\uf041
