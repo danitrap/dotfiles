@@ -1,5 +1,5 @@
 [default_session]
-startup_command = "nvim -c 'FzfLua files'"
+ls_command = "eza --all --git --icons --color=always"
 
 [[session]]
 name = "Home 🏠"
@@ -17,16 +17,6 @@ path = "~/Code"
 startup_command = "l"
 
 [[session]]
-name = "tmux config"
-path = "~/"
-startup_command = "nvim .tmux.conf"
-
-[[session]]
-name = "nvim config"
-path = "~/.config/nvim/lua/"
-startup_command = "nvim ."
-
-[[session]]
-name = "zsh config"
-path = "~/"
-startup_command = "nvim .zshrc"
+name = "Pictures 🖼️"
+path = "~/Pictures"
+startup_command = "yazi"

@@ -133,6 +133,8 @@ alias updatekitty='curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /de
 
 export MY_LOCATION='Palermo, Italy'
 
+export PATH="$HOME/Code/sesh:$PATH"
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
