@@ -73,6 +73,7 @@ FONTS=(
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/ComicShannsMono.zip"
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/CommitMono.zip"
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Cousine.zip"
+  "https://github.com/epk/SF-Mono-Nerd-Font/archive/refs/heads/master.zip"
 )
 
 # Download and install each font
