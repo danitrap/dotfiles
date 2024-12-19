@@ -22,7 +22,9 @@ if status is-interactive
     # update kitty
     alias updatekitty 'curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin'
 
+    set -U zoxide_cmd cd
+    set -U _ZO_ECHO 1
+
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     starship init fish | source
-    zoxide init --cmd cd fish | source
 end
