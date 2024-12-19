@@ -53,6 +53,10 @@ cheatsh() {
 #  \___/\_|     \_/  \___/ \___/\_| \_/\____/ 
 
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
+bindkey -e
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
 
 _comp_options+=(globdots) # With hidden files
   # ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _ 
@@ -102,7 +106,6 @@ compdef vman="man"
 setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
-bindkey -e
 
 # +---------+
 # | zstyles |
