@@ -26,3 +26,6 @@ vim.api.nvim_set_keymap("x", "Q", ":norm @q<CR>", { noremap = true, silent = tru
 
 -- oil.nvim
 vim.api.nvim_set_keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- TwoslashQueries
+vim.api.nvim_set_keymap("n", "<leader>ci", ":TwoslashQueriesInspect<CR>", { silent = true, noremap = true })
