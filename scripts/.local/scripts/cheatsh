@@ -7,7 +7,7 @@ if [ -z "$search_term" ]; then
   exit 0
 fi
 
-output_command="curl -s "https://cheat.sh/$search_term" | less -R"
+output_command="curl -s "https://cheat.sh/$search_term" | gum pager"
 
 if [ -z "$TMUX" ]; then
   eval "$output_command"
