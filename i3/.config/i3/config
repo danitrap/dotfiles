@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:firacode nerd font 12
+font pango:sfmono nerd font 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -49,8 +49,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Auto tiling script
 exec_always --no-startup-id autotiling
 
-# Start kitty terminal at workspace 2 and brave browser at workspace 1
-exec --no-startup-id i3-msg 'workspace 2; exec kitty; workspace 1; exec brave-browser'
+# Start terminal at workspace 2 and brave browser at workspace 1
+exec --no-startup-id i3-msg 'workspace 2; exec ghostty; workspace 1; exec brave-browser'
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -67,7 +67,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+q exec kitty
+bindsym $mod+q exec ghostty
 
 # kill focused window
 bindsym $mod+c kill
