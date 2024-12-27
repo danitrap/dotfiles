@@ -4,6 +4,7 @@ return {
     dependencies = {
       "marilari88/neotest-vitest",
       "fredrikaverpil/neotest-golang",
+      "nvim-neotest/neotest-plenary",
     },
     opts = {
       adapters = {
@@ -16,6 +17,7 @@ return {
         ["neotest-golang"] = {
           testify_enabled = true,
         },
+        ["neotest-plenary"] = {},
       },
     },
   },
