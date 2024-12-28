@@ -14,5 +14,14 @@ return {
       },
     },
     ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+    opts = function(_)
+      vim.api.nvim_buf_set_keymap(
+        0,
+        "n",
+        "<leader>ci",
+        ":TwoslashQueriesInspect<CR>",
+        { silent = true, noremap = true, desc = "Inspect type" }
+      )
+    end,
   },
 }
