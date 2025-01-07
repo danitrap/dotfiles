@@ -1,4 +1,4 @@
 return {
-  "christoomey/vim-tmux-navigator",
-  lazy = false,
+  "alexghergh/nvim-tmux-navigation",
+  opts = {},
 }
