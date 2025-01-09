@@ -2,7 +2,7 @@ return {
   "elliotxx/copypath.nvim",
   config = function()
     require("copypath").setup({
-      mapping = "<leader>y",
+      mapping = "<leader>Y",
     })
   end,
 }
